@@ -30,7 +30,7 @@ public class Circle {
         double y = point.getY();
         double distance = Math.sqrt(Math.pow(point.getX() - center.getX(), 2) + Math.pow(point.getY() - center.getY(), 2));
         System.out.println("You are in contains metod distance is : " +distance);
-        return distance < radius;
+        return distance <= radius;
     }
 
     @Override

@@ -40,23 +40,25 @@ public class Rectangle {
     public boolean contains(Point point) {
         double x = point.getX();
         double y = point.getY();
-        try {
+       /* try {
             if(this.width>this.corner.getX() && this.height<=this.corner.getY())
             {
                 return true;
             }
            /* if (this.corner.getX() >= x && this.corner.getY() <= y) {
                 return true;
-            }*/
+            }
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        return false;
+        return false;*/
+
+        return (x >= corner.getX() && x <= corner.getX() + width && y >= corner.getY() && corner.getY() <= corner.getY() + height);
     }
     public Point getRandomPoint(){
         Random random = new Random();
-        Double x = random.nextDouble();
-        Double y = random.nextDouble();
+        Double x = corner.getX() + random.nextDouble() * width;
+        Double y = corner.getY()+ random.nextDouble() * height;
         return new Point(x,y);
     }
 
